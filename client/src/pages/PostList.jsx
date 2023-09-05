@@ -8,8 +8,8 @@ import {
   Link as ChakraLink,
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import axios from 'axios';
 import { useLoaderData } from 'react-router-dom';
+import { getPosts } from '../api/posts';
 
 function PostList() {
   const posts = useLoaderData();
@@ -34,11 +34,7 @@ function PostList() {
 }
 
 function loader({ request: { signal } }) {
-  return axios
-    .get('http://127.0.0.1:3000/posts', {
-      signal,
-    })
-    .then((res) => res.data);
+  return getPosts({ signal });
 }
 
 export const postListRoute = {
