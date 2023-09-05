@@ -3,37 +3,31 @@ import {
   Outlet,
   ScrollRestoration,
 } from 'react-router-dom';
-import { Link as ChakraLink, HStack } from '@chakra-ui/react';
+import { Link as ChakraLink, Container, HStack } from '@chakra-ui/react';
 
 export function RootLayout() {
   return (
     <>
-      <nav className='top-nav'>
-        <HStack justifyContent='space-between'>
-          <div className='nav-text-large'>My App</div>
-          <ul className='nav-list'>
-            <li>
-              <ChakraLink as={ReactRouterLink} to='/posts'>
-                Posts
-              </ChakraLink>
-            </li>
-            <li>
-              <ChakraLink as={ReactRouterLink} to='/users'>
-                Users
-              </ChakraLink>
-            </li>
-            <li>
-              <ChakraLink as={ReactRouterLink} to='/todos'>
-                Todos
-              </ChakraLink>
-            </li>
-          </ul>
+      <nav>
+        <HStack justifyContent='space-between' padding={5}>
+          <p>My App</p>
+          <HStack spacing={5}>
+            <ChakraLink as={ReactRouterLink} to='/posts'>
+              Posts
+            </ChakraLink>
+            <ChakraLink as={ReactRouterLink} to='/users'>
+              Users
+            </ChakraLink>
+            <ChakraLink as={ReactRouterLink} to='/todos'>
+              Todos
+            </ChakraLink>
+          </HStack>
         </HStack>
       </nav>
       <ScrollRestoration />
-      <div className='container'>
+      <Container maxW='64rem'>
         <Outlet />
-      </div>
+      </Container>
     </>
   );
 }
