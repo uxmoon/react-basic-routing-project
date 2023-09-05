@@ -1,3 +1,5 @@
+import { Heading } from '@chakra-ui/react';
+
 export function TodoList() {
-  return <h1>Todo List</h1>;
+  return <Heading>Todo List</Heading>;
 }

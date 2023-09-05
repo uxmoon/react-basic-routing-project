@@ -1,7 +1,9 @@
+import { Heading } from '@chakra-ui/react';
+
 function App() {
   return (
     <>
-      <h1>Routing</h1>
+      <Heading>Routing</Heading>
     </>
   );
 }
