@@ -17,7 +17,7 @@ function UserList() {
   const users = useLoaderData();
   return (
     <>
-      <Heading>User List: {users.length}</Heading>
+      <Heading>User List</Heading>
       <SimpleGrid columns={2} spacing={10}>
         {users.map((user) => (
           <Card key={user.id}>

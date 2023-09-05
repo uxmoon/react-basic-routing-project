@@ -15,7 +15,7 @@ function PostList() {
   const posts = useLoaderData();
   return (
     <>
-      <Heading>Post List: {posts.length}</Heading>
+      <Heading>Post List</Heading>
       <SimpleGrid columns={2} spacing={10}>
         {posts.map((post) => (
           <Card key={post.id}>
