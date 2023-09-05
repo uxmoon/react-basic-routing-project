@@ -1,3 +1,5 @@
+import { Heading } from '@chakra-ui/react';
+
 export function UserList() {
-  return <h1>User List</h1>;
+  return <Heading>User List</Heading>;
 }

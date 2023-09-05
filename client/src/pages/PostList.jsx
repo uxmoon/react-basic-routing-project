@@ -1,3 +1,5 @@
+import { Heading } from '@chakra-ui/react';
+
 export function PostList() {
-  return <h1>Post List</h1>;
+  return <Heading>Post List</Heading>;
 }
