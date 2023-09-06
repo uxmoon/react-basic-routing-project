@@ -54,7 +54,7 @@ export function RootLayout() {
           />
         </Center>
       )}
-      <Container maxW='64rem'>
+      <Container maxW='64rem' paddingTop={8}>
         <Outlet />
       </Container>
     </>
