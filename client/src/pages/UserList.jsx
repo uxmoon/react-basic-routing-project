@@ -17,11 +17,15 @@ function UserList() {
   const users = useLoaderData();
   return (
     <>
-      <Heading>User List</Heading>
+      <Heading as='h1' marginBottom={2}>
+        User List
+      </Heading>
       <SimpleGrid columns={2} spacing={10}>
         {users.map((user) => (
           <Card key={user.id}>
-            <CardHeader>{user.name}</CardHeader>
+            <CardHeader>
+              <Heading size='md'>{user.name}</Heading>
+            </CardHeader>
             <CardBody>
               <List>
                 <ListItem>{user.company.name}</ListItem>

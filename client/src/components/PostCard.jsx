@@ -4,6 +4,7 @@ import {
   CardFooter,
   CardHeader,
   Link as ChakraLink,
+  Heading,
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -11,7 +12,9 @@ import PropTypes from 'prop-types';
 export default function PostCard({ id, title, body }) {
   return (
     <Card key={id}>
-      <CardHeader>{title}</CardHeader>
+      <CardHeader>
+        <Heading size='md'>{title}</Heading>
+      </CardHeader>
       <CardBody>{body}</CardBody>
       <CardFooter>
         <ChakraLink as={ReactRouterLink} to={`/posts/${id}`}>

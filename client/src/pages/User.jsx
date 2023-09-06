@@ -14,7 +14,6 @@ import TodoItem from '../components/TodoItem';
 
 function User() {
   const { user, posts, todos } = useLoaderData();
-  console.log(user);
   return (
     <>
       <Heading>{user.name}</Heading>
