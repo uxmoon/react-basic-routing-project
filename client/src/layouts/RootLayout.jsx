@@ -18,8 +18,17 @@ export function RootLayout() {
   return (
     <>
       <nav>
-        <HStack justifyContent='space-between' padding={5}>
-          <p>My App</p>
+        <HStack
+          justifyContent='space-between'
+          padding={5}
+          bgColor='teal'
+          color='white'
+        >
+          <p>
+            <ChakraLink as={ReactRouterLink} to='/posts'>
+              My App
+            </ChakraLink>
+          </p>
           <HStack spacing={5}>
             <ChakraLink as={ReactRouterLink} to='/posts'>
               Posts
