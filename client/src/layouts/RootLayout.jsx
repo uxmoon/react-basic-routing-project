@@ -5,6 +5,7 @@ import {
   useNavigation,
 } from 'react-router-dom';
 import {
+  Center,
   Link as ChakraLink,
   Container,
   HStack,
@@ -34,13 +35,15 @@ export function RootLayout() {
       </nav>
       <ScrollRestoration />
       {isLoading && (
-        <Spinner
-          thickness='4px'
-          speed='0.65s'
-          emptyColor='gray.200'
-          color='teal'
-          size='xl'
-        />
+        <Center>
+          <Spinner
+            thickness='4px'
+            speed='0.65s'
+            emptyColor='gray.200'
+            color='teal'
+            size='xl'
+          />
+        </Center>
       )}
       <Container maxW='64rem'>
         <Outlet />
