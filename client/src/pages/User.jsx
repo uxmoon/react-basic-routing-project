@@ -14,7 +14,10 @@ function User() {
       <UnorderedList>
         <ListItem>Company: {user.company.name}</ListItem>
         <ListItem>Website: {user.website}</ListItem>
-        <ListItem>Address: {user.address.street}</ListItem>
+        <ListItem>
+          Address: {user.address.street} {user.address.suite}{' '}
+          {user.address.city} {user.address.zipcode}
+        </ListItem>
       </UnorderedList>
     </>
   );
