@@ -2,10 +2,18 @@ import {
   Link as ReactRouterLink,
   Outlet,
   ScrollRestoration,
+  useNavigation,
 } from 'react-router-dom';
-import { Link as ChakraLink, Container, HStack } from '@chakra-ui/react';
+import {
+  Link as ChakraLink,
+  Container,
+  HStack,
+  Spinner,
+} from '@chakra-ui/react';
 
 export function RootLayout() {
+  const navigation = useNavigation();
+  const isLoading = navigation.state === 'loading';
   return (
     <>
       <nav>
@@ -25,6 +33,15 @@ export function RootLayout() {
         </HStack>
       </nav>
       <ScrollRestoration />
+      {isLoading && (
+        <Spinner
+          thickness='4px'
+          speed='0.65s'
+          emptyColor='gray.200'
+          color='teal'
+          size='xl'
+        />
+      )}
       <Container maxW='64rem'>
         <Outlet />
       </Container>
