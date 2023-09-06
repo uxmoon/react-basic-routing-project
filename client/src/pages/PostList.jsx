@@ -1,15 +1,7 @@
-import {
-  Heading,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  SimpleGrid,
-  Link as ChakraLink,
-} from '@chakra-ui/react';
-import { Link as ReactRouterLink } from 'react-router-dom';
+import { Heading, SimpleGrid } from '@chakra-ui/react';
 import { useLoaderData } from 'react-router-dom';
 import { getPosts } from '../api/posts';
+import PostCard from '../components/PostCard';
 
 function PostList() {
   const posts = useLoaderData();
@@ -18,15 +10,7 @@ function PostList() {
       <Heading>Post List</Heading>
       <SimpleGrid columns={2} spacing={10}>
         {posts.map((post) => (
-          <Card key={post.id}>
-            <CardHeader>{post.title}</CardHeader>
-            <CardBody>{post.body}</CardBody>
-            <CardFooter>
-              <ChakraLink as={ReactRouterLink} to={`/posts/${post.id}`}>
-                View
-              </ChakraLink>
-            </CardFooter>
-          </Card>
+          <PostCard key={post.id} {...post} />
         ))}
       </SimpleGrid>
     </>

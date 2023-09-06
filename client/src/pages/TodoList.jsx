@@ -1,6 +1,7 @@
-import { Heading, ListItem, UnorderedList } from '@chakra-ui/react';
+import { Heading, UnorderedList } from '@chakra-ui/react';
 import { getTodos } from '../api/todos';
 import { useLoaderData } from 'react-router-dom';
+import TodoItem from '../components/TodoItem';
 
 function TodoList() {
   const todos = useLoaderData();
@@ -9,12 +10,7 @@ function TodoList() {
       <Heading>Todo List</Heading>
       <UnorderedList>
         {todos.map((todo) => (
-          <ListItem
-            key={todo.id}
-            textDecoration={todo.completed && 'line-through'}
-          >
-            {todo.title}
-          </ListItem>
+          <TodoItem key={todo.id} {...todo} />
         ))}
       </UnorderedList>
     </>
